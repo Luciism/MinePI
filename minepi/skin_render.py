@@ -46,6 +46,7 @@ class Render:
             vr: int = 0,
             hr: int = 0,
             hrh: int = 0,
+            hrv: int = 0,
             vrll: int = 0,
             vrrl: int = 0,
             vrla: int = 0,
@@ -63,6 +64,7 @@ class Render:
         self.vr = vr
         self.hr = hr
         self.hrh = hrh
+        self.hrv = hrv
         self.vrll = vrll
         self.vrrl = vrrl
         self.vrla = vrla
@@ -160,7 +162,8 @@ class Render:
 
         # head has an additional z-axis rotation
         beta_head = radians(self.hrh)
-        self.body_angles["head"] = self.rotation_y(beta_head)
+        alpha_head = radians(self.hrv)
+        self.body_angles["head"] = np.dot(self.rotation_x(alpha_head), self.rotation_y(beta_head))
         self.body_angles["helmet"] = self.body_angles["head"]
 
         # arms have an additional x and z-axis rotation

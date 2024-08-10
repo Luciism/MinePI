@@ -208,6 +208,7 @@ class Skin:
             vr: int = 25,
             hr: int = 35,
             hrh: int = 0,
+            hrv: int = 0,
             vrll: int = 0,
             vrrl: int = 0,
             vrla: int = 0,
@@ -231,6 +232,8 @@ class Skin:
             Horizontal rotation of the output image
         hrh: int
             Horizontal head rotation
+        hrv: int
+            Vertical head rotation
         vrll: int
             Vertical rotation of the left leg
         vrrl: int
@@ -267,6 +270,7 @@ class Skin:
             vr=vr,
             hr=hr,
             hrh=hrh,
+            hrv=hrv,
             vrll=vrll,
             vrrl=vrrl,
             vrla=vrla,
